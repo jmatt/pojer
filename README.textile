@@ -1,6 +1,6 @@
 h3. Pojer is Poker for Clojure
 
-bq. I wrote this while learning clojure. It should be mostly correct. It works as of 1.1 and 1.2.0-beta1.
+bq. I wrote this while learning clojure. It should be mostly correct. It works as of clojure 1.1 and 1.2.0-beta1.
 
 h4. Examples:
 
