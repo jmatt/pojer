@@ -1,28 +1,7 @@
-h3. I wrote this while learning clojure. It should be mostly correct. It works as of 1.1 and 1.2.0-beta1.
+h3. Pojer is Poker for Clojure
+
+bq. I wrote this while learning clojure. It should be mostly correct. It works as of 1.1 and 1.2.0-beta1.
 
 h4. Examples:
 
-<code>
-
-; evaluate 24000 hands and return the results sorted
-pojer> (frequencies-sorted-n (random-run-eval 24000 5 eval-hand?) 2)
-(["Four of a Kind." 10] ["Full House." 35] ["Flush." 66] ["Straight." 77] ["Three of a Kind." 499] ["Two Pair." 1136] ["Pair." 10134] ["No Pair." 12043])
-
-; random cards from a shuffled deck
-pojer> (rand-cards 10) 
-({:suit [1 :Club], :rank [8 :8]} {:suit [3 :Heart], :rank [7 :7]} {:suit [2 :Diamond], :rank [5 :5]} {:suit [4 :Spade], :rank [3 :3]} {:suit [3 :Heart], :rank [12 :Queen]} {:suit [3 :Heart], :rank [5 :5]} {:suit [3 :Heart], :rank [11 :Jack]} {:suit [1 :Club], :rank [10 :10]} {:suit [2 :Diamond], :rank [14 :Ace]} {:suit [1 :Club], :rank [3 :3]})
-
-; results of 1000 three card hands testing for three of a kind. 
-pojer> (random-run 1000 3 three-of-a-kind?)
-20 three-of-a-kind? ({:suit [2 :Diamond], :rank [4 :4]} {:suit [4 :Spade], :rank [4 :4]} {:suit [1 :Club], :rank [4 :4]})
-998 three-of-a-kind? ({:suit [3 :Heart], :rank [6 :6]} {:suit [4 :Spade], :rank [6 :6]} {:suit [2 :Diamond], :rank [6 :6]})
-nil
-
-; out of 7 cards - 5 card hand evaluation
-pojer> (random-combination-run 24000 5 straight-flush? 7) 
-21502 straight-flush? true 
-combination hand:  ({:suit [2 :Diamond], :rank [11 :Jack]} {:suit [2 :Diamond], :rank [14 :Ace]} {:suit [2 :Diamond], :rank [10 :10]} {:suit [2 :Diamond], :rank [12 :Queen]} {:suit [2 :Diamond], :rank [13 :King]} {:suit [2 :Diamond], :rank [2 :2]} {:suit [3 :Heart], :rank [2 :2]}) 
-hs hand: ({:suit [2 :Diamond], :rank [11 :Jack]} {:suit [2 :Diamond], :rank [14 :Ace]} {:suit [2 :Diamond], :rank [10 :10]} {:suit [2 :Diamond], :rank [12 :Queen]} {:suit [2 :Diamond], :rank [13 :King]})
-nil
-
-</code>
+!http://dl.dropbox.com/u/750959/pojerscreenshot.png!
