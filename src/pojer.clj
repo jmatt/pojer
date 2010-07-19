@@ -29,15 +29,7 @@
 
 
 
-;; Utilities 2
-(defn shuffle
-  "Return a random permutation of coll"
-  {:added "1.2"}
-  [coll]
-  (let [al (java.util.ArrayList. coll)]
-    (java.util.Collections/shuffle al)
-    (clojure.lang.RT/vector (.toArray al))))
-
+;; Utilities
 (defn rand-cards [n]
   (if (and (> n 0) (< n 53))
      (take n (shuffle deck))))
@@ -170,7 +162,7 @@
 
 (defn same? [s] (apply = s))
 
-(defnk frequencies-sorted-n [s n :comparer >]
+(defn frequencies-sorted-n [s n & {:keys [comparer] :or {comparer <}}]
   "sort frequencies of sequence s by nth item of each element."
   (sort (fn [f1 f2] (comparer (last f1) (last f2))) (frequencies (map (fn [e] (nth e n)) s))))
 
@@ -180,10 +172,10 @@
 		      (last f2)))
 	(frequencies (sort > (map rv hand)))))
 
-(defnk meta-frequencies
+(defn meta-frequencies
   "Tests to find the largest same rank cards.
    does not return true if another valid frequency exists."
-  [same hand :groupcount nil]
+  [same hand & {:keys [groupcount]}]
   (let [sf (sr-frequencies hand)
 	f1 (first sf)
 	size (second f1) n (count hand)
